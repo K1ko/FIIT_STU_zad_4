@@ -2,27 +2,31 @@
 
 int main()
 {
-    double x, suma;
-    int i;
     FILE *subor;
-    fclose(fopen("cisla.txt","r"));
-    subor = fopen("cisla.txt","a");
+    char s;
+    double x;
+    int i;
+    //fclose(fopen("cisla.txt","r"));
+    subor = fopen("cisla.txt","r");
     if(subor == NULL)
     {
         printf("Neexistuje subor cisla.txt");
         return 0;
+        //exit();
     }
-    suma = 0.0;
-    i = 0;
-    while (feof(subor) == 0) {
-        fscanf(subor, "%lf", &x);
-        printf("%.3lf\n", x);
-        suma += x;
-        i++;
-        //return 0;
-        fclose(subor);
-        //printf("%s", str);
-    }
-    printf("Priemer cisel je: %.3lf\n", suma / i);
-    return 0;
+    do
+    {
+        s = getc(subor);
+        printf("%c",s);
+        //i = getc(subor);
+        x ++;
+        
+    } while (s!=EOF);
+    fclose(subor);
+    //printf("%lf \n",x);
+    //printf("%d",x);
+    //getch();
+    
 }
+    
+
