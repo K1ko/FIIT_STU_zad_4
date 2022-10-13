@@ -8,15 +8,13 @@ int main(){
     s = fopen("novy.txt","w");
     scanf("%c",&ch);
     //printf("%c",ch);
-    c = fgetc(subor);
-    while (c != EOF)
-    {
+    //c = fgetc(subor);
+    while((c=fgetc(subor)) != EOF){
         if(ch =='s'){
-        fputc(c, s);
-        c = fgetc(subor);}
+            putc(c,subor);
+        }
         else{
-            fscanf(subor,"%c",&vypis);
-            printf("%c",vypis);
+            putchar(c);
         }
     }
     fclose(subor);
