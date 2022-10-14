@@ -15,8 +15,7 @@ rewind(subor);
 rewind(subor1);
 while(((c =fgetc(subor)) !=EOF) && (c1 =fgetc(subor1)) !=EOF)
 {
-    d++;
-    d1++;
+    
     if(c != c1)
         p_r++;
 }
