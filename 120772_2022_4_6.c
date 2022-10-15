@@ -2,15 +2,14 @@
 
 int main(){
     float x;
-    FILE *subor;
-    scanf("%f",&x);
-    fclose(fopen("nasobky.txt","w"));
-    subor = fopen("nasobky.txt","a"); 
-    for(int i = 1;i <=10;i++)
+    FILE *subor; //vytvorenie premennej na otvorenie súboru
+    scanf("%f",&x); //načítanie čísla na výpis
+    subor = fopen("nasobky.txt","w"); //otvorenie súboru na písanie
+    for(int i = 1;i <=10;i++) // cyklus na výpis násobkov
     {
-        fprintf(subor,"%d * %.2f = %.2f \n",i,x,i*x);
+        fprintf(subor,"%d * %.2f = %.2f \n",i,x,i*x); // zapísanie násobkov do súboru
 
     }
-    fclose(subor);
+    fclose(subor); //zatvorenie súboru
     return 0;
 }
